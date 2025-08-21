@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Srinithi!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comfortaa', cursive;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* New vibrant birthday gradient! */
+            background: linear-gradient(125deg, #f878ca, #b082f9, #7892f2, #87CEEB);
+            background-size: 400% 400%;
+            animation: gradientParty 15s ease infinite;
+        }
+
+        @keyframes gradientParty {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+        
+        .page {
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page.active {
+            display: flex;
+        }
+        
+        .main-content {
+            z-index: 10;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+        
+        .main-headline {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: sparkle 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes sparkle {
+            0% { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5); }
+            100% { text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.9); }
+        }
+        
+        .subheadline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .opening-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .next-page-btn {
+            margin-top: 2rem;
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: 'Comfortaa', cursive;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            z-index: 20;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .next-page-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation-play-state: paused;
+        }
+        
+        /* Floating Comments with better animation */
+        .floating-comment {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: gentleFloat 25s infinite ease-in-out;
+            z-index: 5;
+            white-space: nowrap;
+        }
+        
+        @keyframes gentleFloat {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            25% { transform: translate(20vw, -20vh) rotate(5deg); opacity: 0.8; }
+            50% { transform: translate(-15vw, 10vh) rotate(-3deg); opacity: 0.8; }
+            75% { transform: translate(10vw, 25vh) rotate(2deg); opacity: 0.8; }
+            100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+        }
+
+        .comment-1 { top: 15%; left: 10%; animation-duration: 22s; }
+        .comment-2 { top: 30%; left: 70%; animation-duration: 18s; animation-delay: 5s; }
+        .comment-3 { top: 65%; left: 20%; animation-duration: 25s; }
+        .comment-4 { top: 80%; left: 60%; animation-duration: 20s; animation-delay: 8s; }
+        .comment-5 { top: 50%; left: 50%; animation-duration: 17s; }
+        .comment-6 { top: 25%; left: 40%; animation-duration: 23s; animation-delay: 3s; }
+
+        /* Page 2 Styles */
+        .page-2 { padding-top: 80px; }
+        .page-2-content { max-width: 1200px; width: 100%; text-align: center; }
+        .page-2 .main-headline { color: white; margin-bottom: 3rem; font-size: 3rem; }
+        
+        /* NEW Masonry Photo Collage - No more cropped images! */
+        .photo-collage {
+            column-count: 3;
+            column-gap: 1.5rem;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .collage-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .collage-item:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        .collage-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .back-btn {
+            position: fixed; top: 2rem; left: 2rem; z-index: 100;
+            background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.5);
+            padding: 0.8rem 1.5rem; border-radius: 50px; font-family: 'Comfortaa', cursive;
+            font-size: 1rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        
+        /* Confetti Styles */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .photo-collage { column-count: 2; }
+        }
+        
+        @media (max-width: 768px) {
+            .main-headline { font-size: 2.5rem; }
+            .page-2 .main-headline { font-size: 2.2rem; }
+            .main-content { padding: 2rem; margin: 1rem; }
+            .opening-paragraph { font-size: 1.1rem; }
+            .subheadline { font-size: 1.3rem; }
+            .floating-comment { font-size: 1.2rem; }
+        }
+
+        @media (max-width: 500px) {
+            .photo-collage { column-count: 1; }
+            .main-headline { font-size: 2rem; }
+            .page-2 .main-headline { font-size: 1.8rem; }
+            .main-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page page-1 active">
+        <div class="floating-comment comment-1">You are the best!</div>
+        <div class="floating-comment comment-2">Pretty!</div>
+        <div class="floating-comment comment-3">Amazing!</div>
+        <div class="floating-comment comment-4">Let your life be as enchanting as you</div>
+
+        <div class="main-content">
+            <h1 class="main-headline">Happy Birthday, Srinithi!</h1>
+            <h2 class="subheadline">Celebrating a friend who makes the world a brighter place.</h2>
+            <p class="opening-paragraph">
+                Happy birthday to the girl who's always down for fun, makes us laugh until our sides hurt, and makes sure no one is ever left out! We admire how you tackle even the most complex Power BI dashboards with a smile and determination. Your hard work and positive spirit inspire us all!
+            </p>
+            <button class="next-page-btn" onclick="showPage(2)">See Your Beautiful Memories →</button>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page page-2">
+         <div class="floating-comment comment-1">You are such a vibing girl 😎</div>
+         <div class="floating-comment comment-2">... a fighter with a heart of gold ...</div>
+         <div class="floating-comment comment-3">The place surrounded by you is filled with positive vibes 💃</div>
+         <div class="floating-comment comment-4">Sweet but sassy, naughty but nice...</div>
+         <div class="floating-comment comment-5">... a little quirky, and still down-to-earth ...</div>
+         <div class="floating-comment comment-6">Meet the ultimate girl of mystery...</div>
+
+        <a href="#" class="back-btn" onclick="showPage(1); return false;">← Back</a>
+        
+        <div class="page-2-content">
+            <h1 class="main-headline">A Collage of Joy!</h1>
+            
+            <div class="photo-collage">
+                <div class="collage-item"><img src="images\GroupPic.jpg"></div>
+                <div class="collage-item"><img src="images\headphoneside.jpeg"></div>
+                <div class="collage-item"><img src="images\HerFav.jpg"></div>
+                <div class="collage-item"><img src="images\So happpy.jpg"></div>
+                <div class="collage-item"><img src="images\widesmile.jpeg"></div>
+                <div class="collage-item"><img src="images\GM.jpg"></div>
+                <div class="collage-item"><img src="images\sonaliwithsri.jpg"></div>
+                <div class="collage-item"><img src="images\Openhouse.jpg"></div>
+                <div class="collage-item"><img src="images\model.jpg"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showPage(pageNumber) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.querySelector(`.page-${pageNumber}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                showPage(2);
+            } else if (e.key === 'ArrowLeft') {
+                showPage(1);
+            }
+        });
+
+        // Confetti script!
+        const confettiColors = ['#f878ca', '#b082f9', '#7892f2', '#87CEEB', '#fff'];
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 3 + 4 + 's'; // duration between 4-7 seconds
+            confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                confetti.remove();
+            }, 7000); // remove after 7 seconds
+        }
+
+        setInterval(createConfetti, 200); // create new confetti every 200ms
+    </script>
+</body>
+</html>
